@@ -1,0 +1,42 @@
+{
+    "latex-workshop.latex.recipe.default": "quick-preview",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "quick-preview",
+            "tools": ["pdflatex"]
+        },
+        {
+            "name": "full-build",
+            "tools": ["latexmk-full"]
+        }
+    ],
+
+    // TOOL DEFINITIONS
+    // ----------------------------------------------------------------
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "latexmk-full",
+            "command": "latexmk",
+            "args": [
+                "--shell-escape",
+                "--file-line-error",
+                "--synctex=-1",
+                "-interaction=nonstopmode",
+                "-pdf",           // Use pdflatex
+                "%DOC%"
+            ],
+            "env": {}
+        }
+    ],
+}
