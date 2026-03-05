@@ -73,9 +73,9 @@
 % Command to set task(s) - can be called multiple times or with comma-separated list
 \newcommand{\ifrtask}[1]{%
   \ifx\@ifrtask\@empty
-    \def\@ifrtask{#1}%
+    \def\@ifrtask{{#1}}%
   \else
-    \g@addto@macro\@ifrtask{,#1}%
+    \g@addto@macro\@ifrtask{,{#1}}%
   \fi
 }
 
